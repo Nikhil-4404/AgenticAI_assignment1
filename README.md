@@ -12,24 +12,24 @@
 
 ```mermaid
 graph TD
-    subgraph User_Flow [User Query Pipeline]
-        UserQuery[User Query] --> EmbedQuery[Embedding Model]
-        EmbedQuery --> VectorSearch[Vector Search (FAISS)]
-        VectorSearch --> Retrieve[Retrieve Top-K Chunks]
-        Retrieve --> Augment[Combine Query + Context]
-        Augment --> LLM[LLM Generation]
-        LLM --> Response[Final Answer]
+    subgraph User_Flow ["User Query Pipeline"]
+        UserQuery["User Query"] --> EmbedQuery["Embedding Model"]
+        EmbedQuery --> VectorSearch["Vector Search (FAISS)"]
+        VectorSearch --> Retrieve["Retrieve Top-K Chunks"]
+        Retrieve --> Augment["Combine Query + Context"]
+        Augment --> LLM["LLM Generation"]
+        LLM --> Response["Final Answer"]
     end
 
-    subgraph Ingestion_Flow [Knowledge Processing Pipeline]
-        Doc[Document Source] --> Load[Text Loader]
-        Load --> Chunk[Text Splitter]
-        Chunk --> EmbedDoc[Embedding Model]
-        EmbedDoc --> VectorStore[Vector Database (FAISS)]
+    subgraph Ingestion_Flow ["Knowledge Processing Pipeline"]
+        Doc["Document Source"] --> Load["Text Loader"]
+        Load --> Chunk["Text Splitter"]
+        Chunk --> EmbedDoc["Embedding Model"]
+        EmbedDoc --> VectorStore["Vector Database (FAISS)"]
     end
 
     %% Connect the pipelines
-    VectorStore -.->|Queries| VectorSearch
+    VectorStore -.->|"Queries"| VectorSearch
 ```
 
 ## 4. Text Chunking Strategy
