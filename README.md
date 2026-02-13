@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # RAG Assignment: Automated Policy Q&A System
 
 ## 1. Problem Statement
@@ -70,4 +70,4 @@ graph TD
 3.  Run all cells to see the pipeline in action.
 =======
 
->>>>>>> 86fd94c616d7e757a593b762e1e7d7f55e19fcbe
+
